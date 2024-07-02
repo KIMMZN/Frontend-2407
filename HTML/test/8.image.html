@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image</title>
+  </head>
+  <script>
+    alert("Start");
+  </script>
+  <style>
+    /* This style sets the width of all images to 100%: */
+    img {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <!-- <img src="url" alt="alternatetext"> -->
+    <img src="img/dog.jpg" alt="cute dogs" /> <br />
+    <img
+      src="img/girl.jfif"
+      alt="a girl in a jacket"
+      width="300"
+      height="500"
+    />
+    <hr />
+    <h2>Width/Height Attributes or Style?</h2>
+
+    <p>
+      The first image uses the width attribute (set to 128 pixels), but the
+      style in the head section overrides it, and sets the width to 100%.
+    </p>
+    <img src="img/html5.gif" alt="html5 icon" width="128" height="128" />
+
+    <p>
+      The second image uses the style attribute to set the width to 128 pixels,
+      this will not be overridden by the style in the head section:
+    </p>
+    <img
+      src="img/html5.gif"
+      alt="html5 icon"
+      style="width: 128px; height: 128px"
+    />
+
+    <h3>images on another server</h3>
+    <img
+      src="https://www.w3schools.com/images/w3schools_green.jpg"
+      alt="W3Schools.com"
+      style="width: 104px; height: 142px"
+    />
+    <h4>gif from url</h4>
+    <img
+      src="https://t1.daumcdn.net/cafeattach/mEr9/17bec9e5d30e655fc447b40a95a3313d916eb945"
+      alt="soccer"
+      style="width: 400px; height: 300px"
+    />
+    <h5>Images as a Link</h5>
+    <p>the image is a link. you can click on it.</p>
+    <a href="https://www.w3schools.com"
+      ><img
+        src="img/smiley.gif"
+        alt="smile w3schools"
+        style="width: 42px; height: 42px"
+      />
+    </a>
+    <h6>Floting images</h6>
+    <p>float the image to the right:</p>
+    <br />
+    <p>
+      <img
+        src="img/smiley.gif"
+        alt="smile icon"
+        style="float: right; width: 42px; height: 42"
+      />
+      a paragraph with a Floting image. a paragraph with a Floting image. a
+      paragraph with a floating iamage.
+    </p>
+  </body>
+</html>
