@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body style="margin: 40px">
+    <h1>A basic HTML table</h1>
+
+    <table style="width: 100%">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+    <p>To understand the example better, we have added borders to the table.</p>
+
+    <h2>TD elements define table cells</h2>
+
+    <table style="width: 90%">
+      <tr>
+        <th>person1</th>
+        <th>person2</th>
+        <th>person3</th>
+      </tr>
+
+      <tr>
+        <td>emil</td>
+        <td>tobias</td>
+        <td>linus</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>14</td>
+        <td>10</td>
+      </tr>
+    </table>
+
+    <p>to understand the example better, we have added borders to the table</p>
+  </body>
+  <!-- (tr)태그는 행을 만들고
+    (td) 태그는 행 안에 있는 셀을 만들기 때문에 
+    (table) 태그안에 tr td 태그가 모드 있어야 셀을 만들수 있다 -->
+
+  <!-- th: table head의 약자, 표의제목을 쓰는 역할
+         tr: table row의 약자, 가로줄 만드는 역할
+         td: table data의 약자, 셀을 만드는 역할 -->
+
+  <!-- 표 제목행 셀 만들때는 td 대신 th 태그를 사용한다 -->
+  <!-- th태그 사용시 내용이 진하게 표시되고 중앙에 배열되므로 가시성이 뛰어나다.
+
+     *colspan 가로줄 합치기, 정보를 세로로 읽고 싶을때 
+  rowspan 세로줄 합치기, 가로 방향으로 정보를 읽고 싶을때* -->
+
+  <!-- <td rowspan="합칠 셀의 개수">셀의 내용</td>
+     <td colspan="힙칠 셀의 개수">셀의 내용</td> -->
+</html>

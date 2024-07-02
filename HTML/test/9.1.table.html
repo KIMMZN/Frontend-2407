@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 2px solid black;
+      border-collapse: collapse; /* *2중 테이블을 하나의 테이블로 축소, 콜랍스* */
+    }
+    th,
+    td {
+      background-color: #96d4d4;
+    }
+  </style>
+  <body>
+    <h1>Table with border</h1>
+    <p>use the CSS border property to add a border to the table.</p>
+    <table style="width: 100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+    </table>
+
+    <h3>cell that spans two columns</h3>
+    <p>to make a cell sapn more than one columnm use the colspan attribute.</p>
+    <table style="width: 90%">
+      <tr>
+        <th colspan="2">name</th>
+        <th>age</th>
+      </tr>
+      <tr>
+        <td>jill</td>
+        <td>smith</td>
+        <td>43</td>
+      </tr>
+    </table>
+    <h4>practive table</h4>
+    <table border="1px solid black" style="width: 80%">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfrued futter drink</td>
+        <td>Anne</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>white man</td>
+        <td>America</td>
+      </tr>
+      <tr>
+        <td>Sammsung</td>
+        <td colspan="2">불명</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Alfreds futter dirnk</td>
+        <td>Maria</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>white man</td>
+        <td>America</td>
+      </tr>
+    </table>
+  </body>
+
+  <!-- *colspan 가로줄 합치기, 정보를 세로로 읽고 싶을때 
+  rowspan 세로줄 합치기, 가로 방향으로 정보를 읽고 싶을때* -->
+</html>
