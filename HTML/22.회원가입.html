@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 가입</title>
+  </head>
+  <body style="margin: 20px">
+    <form action="/action_page.php" method="get" target="_blank">
+      <h1 style="text-align: center">회원 가입</h1>
+      <hr />
+      <label for="userid">사용자 ID*</label><br />
+      <input
+        type="id"
+        name="userid"
+        id="userid"
+        size="20"
+        autofocus
+        required
+      /><br /><br />
+      <label for="pwd">패스워드*</label><br />
+      <input type="password" id="pwd" required /><br /><br />
+      <label for="pwd">패스워드 확인*</label><br />
+      <input type="password" id="pwd" required /><br /><br />
+      <label for="name">이름*</label><br />
+      <input
+        type="text"
+        name="username"
+        id="name"
+        size="10"
+        required
+      /><br /><br /><br />
+
+      <div>
+        <p>성별*</p>
+
+        <input type="radio" name="gender" value="man" checked />남
+        <input type="radio" name="gender" value="woman" />여
+      </div>
+      <br />
+      <br />
+      <label for="email">이메일</label><br />
+      <input type="email" id="email" required /><br /><br />
+
+      <label for="call">전화번호</label><br />
+      <input type="tell" id="call" placeholder="010-8888-7777" /><br /><br />
+
+      <label for="intro">자기소개</label> <br />
+      <textarea name="intro" id="intro" rows="10" cols="60"></textarea
+      ><br /><br />
+
+      <input type="submit" value="제출" />
+      <input type="reset" value="취소" />
+    </form>
+  </body>
+</html>
