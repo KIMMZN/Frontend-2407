@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="/
+    
+"
+      method="get"
+    >
+      <table>
+        <tr>
+          <td><label for="id">이메일</label></td>
+          <td><input type="email" name="email" id="email" />@</td>
+          <td>
+            <select>
+              <option value="naver.com">naver.com</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="hanmail.com">hanmail.com</option>
+              <option value="nate.com">nate.com</option>
+            </select>
+          </td>
+        </tr>
+
+        <h6>이메일</h6>
+        <input type="text" id="email-value" name="emailValue" />
+        <span>@</span>
+        <input type="text" id="email-domain" name="emailDomain" />
+        <select id="email-domain-select" onchange="domain_select()">
+          <option value="">직접 입력</option>
+          <option value="naver.com">네이버</option>
+          <option value="gmail.com">구글</option>
+          <option value="hanmail.net">한메일</option>
+        </select>
+      </table>
+    </form>
+  </body>
+
+  <script>
+    const domain_select = () => {
+      const domain = document.getElementById("email-domain-select").value;
+      const change = document.getElementById("email-domain");
+      change.value = domain;
+    };
+  </script>
+</html>
