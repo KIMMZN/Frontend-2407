@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+    <style>
+      div.visible {
+        background-color: coral;
+        width: 200px;
+        height: 65px;
+        border: 1px solid;
+        overflow: visible; /* * overflow tag : visible, hidden, scroll, auto * */
+      }
+
+      div.scroll {
+        background-color: coral;
+        width: 200px;
+        height: 65px;
+        border: 1px solid;
+        overflow: scroll; /* * overflow tag : visible, hidden, scroll, auto * */
+      }
+
+      div.hidden {
+        background-color: coral;
+        width: 200px;
+        height: 65px;
+        border: 1px solid;
+        overflow: hidden; /* * overflow tag : visible, hidden, scroll, auto * */
+      }
+
+      div.auto {
+        background-color: coral;
+        width: 200px;
+        height: 65px;
+        border: 1px solid;
+        overflow: auto; /* * overflow tag : visible, hidden, scroll, auto * */
+      }
+    </style>
+  </head>
+  <body style="margin: 40px">
+    <h2>Overflow: visible</h2>
+
+    <p>
+      By default, the overflow is visible, meaning that it is not clipped and it
+      renders outside the element's box:
+    </p>
+    <br />
+    <br />
+    <br />
+    <div class="visible">
+      You can use the overflow property when you want to have better control of
+      the layout. The overflow property specifies what happens if content
+      overflows an element's box.
+    </div>
+    <br />
+    <div class="scroll" style="margin-top: 150px">
+      You can use the overflow property when you want to have better control of
+      the layout. The overflow property specifies what happens if content
+      overflows an element's box.
+    </div>
+    <br />
+
+    <div class="hidden">
+      You can use the overflow property when you want to have better control of
+      the layout. The overflow property specifies what happens if content
+      overflows an element's box.
+    </div>
+    <br />
+    <br />
+
+    <div class="auto">
+      You can use the overflow property when you want to have better control of
+      the layout. The overflow property specifies what happens if content
+      overflows an element's box.
+    </div>
+  </body>
+</html>
