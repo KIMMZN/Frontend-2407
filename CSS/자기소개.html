@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자기소개</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      body {
+        margin: 0;
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 1px solid rgb(250, 245, 245);
+        box-shadow: 2px 3px 5px 0px;
+      }
+
+      header {
+        height: 130px;
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+        display: flex; /* diplay : flex*/
+        flex-direction: column; /* flex direction :column은 수직배치하라는 태그다. row 속성은 왼쪽에서 오른쪽 방향으로*/
+        align-items: center;
+        /* flex를 정렬하는 방법중,
+        Vertical 정렬을 할 때 사용(<ㅡ>justify-content는 horizontal alignment) */
+        /* 예) stretch , center, flex-start, flex-end 등등 */
+
+        justify-content: center; /* justify content는 (가로축horizontal * 중심축) */
+        color: white;
+        border-radius: 10px;
+      }
+
+      /* navigation bar */
+      nav {
+        display: flex;
+        background-color: rgb(17, 19, 18);
+
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        border-radius: 10px;
+      }
+      nav a {
+        color: white;
+        padding: 15px;
+        text-decoration: none; /* text deco : 선으로 텍스트를 꾸밀수 있게 해주는 태그 */
+
+        display: inline-block;
+        font-size: 20px;
+      }
+      nav a:hover {
+        background-color: white;
+        color: black;
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      article {
+        flex: 5;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        box-shadow: black;
+      }
+
+      footer {
+        background-color: #d2dadd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      #sp {
+        font-style: italic;
+      }
+
+      h2 {
+        background-color: rgb(208, 244, 250);
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+
+        width: 500px;
+      }
+
+      #main {
+        background-color: #ecf0f1;
+
+        border-radius: 10px;
+        border: 1px solid rgb(253, 248, 248);
+        width: 1000px;
+        bor
+      }
+    </style>
+  </head>
+  <body style="margin: 40px">
+    <!-- header 영역 -->
+    <header>
+      <h1>나의 홈페이지</h1>
+      <p><strong>첫</strong>번째.</p>
+    </header>
+
+    <!-- navigation bar -->
+    <nav>
+      <a href="#one">태어난 곳</a>
+      <a href="#two">내가 가봤던 곳/가보고 싶은 곳</a>
+      <a href="#three">내가 좋아하는 음식</a>
+      <a href="#four">내가 좋아하는것(취미)</a>
+    </nav>
+
+    <div id="container">
+      <article>
+        <div id="one"><h2>내가 태어난 곳</h2></div>
+        <p id="sp">전라남도 진도군</p>
+        <h5></h5>
+        <div>
+          <img src="./진도군.jfif" alt="태어난곳" />
+        </div>
+        <p id="main">
+          전라남도 서남부 진도와 부속 섬을 관할하는 군이다. <br />대한민국에서
+          세 번째로 큰 섬인 진도와 상조도, 하조도, 가사군도 등 45개 유인도를
+          포함하여 256개 섬으로 이루어진다. <br />
+          진도군의 면적은 430.7km2이고, 2023년 6월 인구는 29,222 명이다. 군청
+          소재지는 진도읍이고 행정구역은 1읍 6면이다
+        </p>
+        <br />
+        <p id="main">
+          진도는 북으로 해남군 문내면과 진도대교가 연결되어 육지와의 교통이
+          편리하다. <br />다도해해상국립공원을 중심으로 자연경관이 수려하다.
+          진도아리랑이라는 민요가 전해져 내려오며, 유물·유적, 천연기념물,
+          기·예능보유자가 많다. <br />천연기념물 제53호인 진돗개의 친근한
+          이미지를 상징하는 '진돌이'가 마스코트이다.
+        </p>
+        <br /><br />
+        <hr />
+
+        <h2 id="two">내가 가봤던 곳 / 가보고 싶은 곳</h2>
+        <p id="sp"><strong>필리핀</strong></p>
+        <div>
+          <img src="./필리핀 가보고 싶은곳.jpg" alt="필리핀 가봤던 곳" />
+        </div>
+        <br /><br />
+        <p id="main">
+          필리핀에 가보고 싶은 이유는 매우 다양합니다. <br />
+          특히, 보라카이, 세부, 마닐라는 필리핀에서 반드시 방문해야 할 곳입니다.
+          <br />
+          보라카이는 필리핀에서 가장 유명한 관광지 중 하나로, 그 화려한 백사장과
+          맑은 바다로 유명합니다.
+          <br />세부는 필리핀에서 가장 큰 도시로, 아름다운 해변과 다양한 식도락
+          문화를 제공합니다. <br />마닐라는 필리핀의 수도로, 많은 문화와
+          역사적인 유산을 간직하고 있습니다. <br />이 도시에서는 다양한 박물관,
+          식당, 쇼핑몰 등을 즐길 수 있습니다.
+        </p>
+
+        <br /><br />
+        <hr />
+
+        <h2 id="three">내가 좋아하는 음식</h2>
+        <p id="sp">마라탕</p>
+        <div>
+          <img src="./좋아하는 음식 마라탕.jpeg" alt="마라탕" ; width="80%" />
+        </div>
+        <br />
+        <p id="main">매콤한게 맛있다. 이유가 더 있을까?</p>
+        <br /><br />
+        <hr />
+
+        <h2 id="four">내가 좋아하는 것(취미)</h2>
+        <p id="sp">축구</p>
+        <div>
+          <img src="./축구.jpg" alt="축구" />
+        </div>
+        <p id="main">맥주 한잔 하면서 축구 보는게 인생이다.</p>
+      </article>
+    </div>
+    <!-- *footer* -->
+    <br /><br /><br />
+    <footer>
+      <h1 style="font-style: italic; font-size: 15px; text-align: right">
+        SION KIM
+      </h1>
+    </footer>
+  </body>
+</html>
