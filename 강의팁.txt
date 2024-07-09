@@ -31,6 +31,25 @@ nav nar
 ul li active
 
 
+-------
+ 		같으냐
+
+	=     할당 연산자
+	a = 10;
+
+	= CSS,DBMS 에서는 같으냐?
+	== 대부분 프로그래밍 언어
+	=== JS 데이터 타입과 값이 같으냐
+	    React 
+
+		같지 않냐?
+
+		!= not equal
+
+<div>2024-07-08(월)</div>
+      <div><< < 2024.07 > >></div>
+      <div><button>기념일 추가</button></div>
+
 
 
 
