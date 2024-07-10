@@ -51,6 +51,12 @@ ul li active
       <div><button>기념일 추가</button></div>
 
 
+------------
+
+7.9
+
+mece (mutually exclusive collectively exhaustive)
+
 
 
 
