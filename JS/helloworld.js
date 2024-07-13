@@ -1,7 +1,3 @@
-console.log("hello world");
+console.log["안녕하세요"];
 
-let sum = 0;
-for (let i = 1; i <= 1000; i++) {
-  sum += i;
-}
-console.log("1에서 100까지의 합은", sum);
+console.log("hellow");
