@@ -8,6 +8,12 @@ let radius = 10;
 console.log(
   "반지름이 ${radius}인 원의 둘레는 ${2 * PI * radius}, 면적은 ${PI * radius ** 2}입니다."
 );
+console.log(
+  `반지름이 ${radius}인 원의 둘레는 ${2 * PI * radius}, 면적은 ${
+    PI * radius ** 2
+  }입니다.`
+);
+console.log(`반지름이 ${ra}`);
 
 console.log(radius);
 
