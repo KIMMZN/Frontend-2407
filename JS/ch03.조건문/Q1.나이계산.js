@@ -1,6 +1,6 @@
-const bYear = 1992,
+const bYear = 1995,
   bMonth = 6,
-  bDay = 2; // 생년월일
+  bDay = 25; // 생년월일
 const today = new Date(); // 현재 날짜
 let tYear = today.getFullYear(); // 현재 연도
 let tMonth = today.getMonth() + 1; // 현재 월 (0부터 시작하므로 1 더함)

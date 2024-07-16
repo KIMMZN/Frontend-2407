@@ -3,7 +3,7 @@
 const alarmHour = 6,
   alarmMin = 40;
 
-// 45분 일찍 성절하기
+// 45분 일찍 설절하기
 
 let newHour = 0,
   newMin = 0;

@@ -34,3 +34,7 @@ else console.log(`${num} 은/는 홀수입니다.`);
 num = Math.ceil(Math.random() * 6);
 if (num <= 3) console.log(`${num} 은 작은수 입니다.`);
 else console.log(`${num} 은 큰수 입니다.`);
+
+num = Math.ceil(Math.random() * 6);
+if (num >= 4) console.log(`${num} 은/는 큰수 입니다.`);
+else console.log(`${num} 은/는 작은 수 입니다.`);
