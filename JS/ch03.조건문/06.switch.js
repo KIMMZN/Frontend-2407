@@ -39,7 +39,7 @@ switch (
     grade = "A+";
     break;
   case 9:
-    grade = "A" + sign;
+    grade = "A" + sign; // + sign 해서 case 9에만 sign이 적용됨
 
     break; // break는 switch 문을 벗어나게 해줌
   case 8:
