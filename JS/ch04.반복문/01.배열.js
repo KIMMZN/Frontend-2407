@@ -28,6 +28,10 @@ let prsonObj = {
 summerFruits.push("자두"); //summerfruits에 '자두' 추가;는 사용빈도 높지만 배열요소 제거는 사용빈도 낮음;
 console.log(summerFruits);
 
+summerFruits.push("배");
+console.log(summerFruits);
+
 // 배열 요소 제거
 summerFruits.splice(2, 1); // 인덱스 2인 원소부터 1개를 제거
 console.log(summerFruits);
+

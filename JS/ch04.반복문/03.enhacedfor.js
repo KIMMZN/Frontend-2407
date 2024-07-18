@@ -16,7 +16,8 @@ for (let fruits of summerFruits) console.log(fruits);
 
 // 여름 과일들을 하나의 문자열로 만들기;
 let favoriteFruits = "";
-for (let fruits of summerFruits) favoriteFruits += fruits + " ";
+for (let fruits of summerFruits) 
+  favoriteFruits += fruits + " ";
 console.log(favoriteFruits);
 
 // 1에서 10까지 곱한 값(10! factorial)
