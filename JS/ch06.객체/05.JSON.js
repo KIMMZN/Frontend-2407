@@ -14,4 +14,13 @@ let internalForm = JSON.parse(externalForm);
 console.log(internalForm);
 
 let personArray = [person, {name: 'Jack', age: 29, job: '디자이너'}];
+
 console.log(JSON.stringify(personArray));
+console.log(personArray);
+
+// comparator
+//(a, b) => a - b     오름차순
+//(a, b) => b - a     내림차순
+
+//person.sort((a, b) => a.id - b.id);          // id의 오름차순
+//person.sort((a, b) => b.age - a.age);        // age의 내림차순 ;
