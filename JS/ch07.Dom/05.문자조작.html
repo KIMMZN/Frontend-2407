@@ -11,11 +11,11 @@
             header.innerHTML = '자바스크립트로 변경<br>';
             header.innerHTML += `원래는 "${originalText}" 이었습니다.`;
         }
-
         function escapeText() {
             let header = document.querySelector('#header');
             let originalText = header.innerHTML;
-            header.innerHTML = '<br><i>i 태그입니다.</i>';
+            header.textContent = '<i>i 태그입니다.</i>';
+            header.innerHTML += '<br><i>i 태그입니다.</i>';
             header.innerHTML += '<br>&lt;i&gt;i 태그입니다.&lt;/i&gt;';
         }
     </script>
