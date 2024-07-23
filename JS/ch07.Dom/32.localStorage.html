@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <script>
+        window.onload = () => {
+            // LocalStorage 데이터 설정 및 출력
+            localStorage.setItem('fruit', '복숭아');
+            let fruit = localStorage.getItem('fruit');
+            document.querySelector('h1').innerHTML = fruit;
+
+            localStorage.setItem('object', JSON.stringify({name: '복숭아', price: 2000}));
+            let obj = JSON.parse(localStorage.getItem('object'));
+            console.log(obj);
+            const {name, price} = obj;
+            document.querySelector('#obj').innerHTML = `${name}: ${price}`;
+
+            let fruits = [
+                {name: '복숭아', price: 2000}, {name: '수박', price: 20000}
+            ];
+            localStorage.setItem('array', JSON.stringify(fruits));
+            let array = JSON.parse(localStorage.getItem('array'));
+            console.log(array);
+
+            let todoList = [
+                {key: 0, name: '점심 먹기', flag: false},
+                {key: 1, name: '수업 듣기', flag: false},
+                {key: 2, name: '저녁 먹기', flag: false},
+            ];
+            localStorage.setItem('todoList', JSON.stringify(todoList));
+            let inputList = JSON.parse(localStorage.getItem('todoList'));
+            console.log(inputList);
+
+            const result = document.getElementById('result');
+            for (let todo of inputList) {
+                const todoItem = document.createElement('div');
+                const checkbox = document.createElement('input');
+                const text = document.createElement('span');
+                const button = document.createElement('button');
+
+                // todoItem 객체 조작 후 result에 매단다.
+                todoItem.setAttribute('data-key', todo.key); // <div data-key="0">
+                todoItem.appendChild(checkbox);
+                todoItem.appendChild(text);
+                todoItem.appendChild(button);
+                result.appendChild(todoItem);
+
+                // checkbox 조작
+                checkbox.type = 'checkbox'; // <input type="checkbox">
+                checkbox.checked = todo.flag; // flag 값 반영
+                checkbox.addEventListener('change', e => {
+                    todoItem.style.textDecoration = e.target.checked ? 'line-through' : '';
+                });
+
+                // text 조작
+                text.innerHTML = todo.name;
+
+                // button 조작
+                button.innerText = '제거하기';
+                button.addEventListener('click', () => {
+                    removeTodo(todo.key);
+                });
+            }
+
+            const removeTodo = key => {
+                const item = document.querySelector(`[data-key="${key}"]`);
+                result.removeChild(item);
+                const updatedList = inputList.filter(todo => todo.key !== key);
+                localStorage.setItem('todoList', JSON.stringify(updatedList));
+            }
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1></h1>
+    <h1 id="obj"></h1>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 피하기 게임</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        h1, h2, .bullet {
+            position: absolute;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+        }
+        h1 {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>★</h1>
+    <h2 id="player">☆</h2>
+    <script>
+        window.onload = () => {
+            const star = document.querySelector('h1');
+            const player = document.getElementById('player');
+            star.style.position = 'absolute';
+            player.style.position = 'absolute';
+
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const block = 20;
+            let playerX = screenWidth / 2 / block;
+            let playerY = screenHeight / 1.1 / block;
+            const starSpeed = 5; // 별의 속도 증가
+            let stars = [];
+            let bullets = [];
+            let gameInterval;
+            let starCreationInterval;
+
+            const printPlayer = () => {
+                player.style.left = `${playerX * block}px`;
+                player.style.top = `${playerY * block}px`;
+            }
+
+            const createStar = () => {
+                const starElem = document.createElement('h1');
+                starElem.innerText = '★';
+                starElem.style.position = 'absolute';
+                starElem.style.left = `${Math.floor(Math.random() * (screenWidth / block)) * block}px`;
+                starElem.style.top = `0px`;
+                starElem.style.color = 'white';
+                document.body.appendChild(starElem);
+                stars.push(starElem);
+            }
+
+            const moveStars = () => {
+                stars.forEach((starElem, index) => {
+                    let top = parseInt(starElem.style.top.replace('px', ''));
+                    if (top >= screenHeight) {
+                        starElem.remove();
+                        stars.splice(index, 1);
+                    } else {
+                        starElem.style.top = `${top + starSpeed}px`;
+                    }
+
+                    // 충돌 검사
+                    if (Math.abs(parseInt(starElem.style.left) - playerX * block) < block && Math.abs(top - playerY * block) < block) {
+                        clearInterval(gameInterval);
+                        clearInterval(starCreationInterval);
+                        alert('게임 오버');
+                        window.location.reload();
+                    }
+                });
+            }
+
+            const createBullet = () => {
+                const bullet = document.createElement('div');
+                bullet.className = 'bullet';
+                bullet.innerText = '|';
+                bullet.style.left = `${playerX * block + block / 2}px`;
+                bullet.style.top = `${playerY * block}px`;
+                document.body.appendChild(bullet);
+                bullets.push(bullet);
+            }
+
+            const moveBullets = () => {
+                bullets.forEach((bullet, index) => {
+                    let top = parseInt(bullet.style.top.replace('px', ''));
+                    if (top <= 0) {
+                        bullet.remove();
+                        bullets.splice(index, 1);
+                    } else {
+                        bullet.style.top = `${top - 10}px`;
+
+                        // 총알과 별의 충돌 검사
+                        stars.forEach((starElem, starIndex) => {
+                            if (Math.abs(parseInt(starElem.style.left) - parseInt(bullet.style.left)) < block &&
+                                Math.abs(parseInt(starElem.style.top) - top) < block) {
+                                starElem.remove();
+                                bullet.remove();
+                                stars.splice(starIndex, 1);
+                                bullets.splice(index, 1);
+                            }
+                        });
+                    }
+                });
+            }
+
+            const startGame = () => {
+                gameInterval = setInterval(() => {
+                    moveStars();
+                    moveBullets();
+                }, 50); // 별 이동 속도 증가
+
+                starCreationInterval = setInterval(() => {
+                    createStar();
+                }, 500); // 별 생성 빈도 감소
+            }
+
+            document.body.addEventListener('keydown', event => {
+                switch(event.keyCode) {
+                    case 37: // left
+                        if (playerX > 0) playerX -= 1;
+                        break;
+                    case 38: // up
+                        if (playerY > 0) playerY -= 1;
+                        break;
+                    case 39: // right
+                        if (playerX < screenWidth / block - 1) playerX += 1;
+                        break;
+                    case 40: // down
+                        if (playerY < screenHeight / block - 1) playerY += 1;
+                        break;
+                    case 65: // 'a' key for shooting
+                        createBullet();
+                        break;
+                }
+                printPlayer();
+            });
+
+            printPlayer();
+            startGame();
+        }
+    </script>
+</body>
+</html>
