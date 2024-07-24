@@ -51,6 +51,9 @@
             const stop = document.getElementById('stop');
             const reset = document.getElementById('reset');
 
+            // 초기 화면 설정
+            updateDisplay(displayTime(count));
+
             start.onclick = () => {
                 if (si === null) {
                     si = setInterval(() => {

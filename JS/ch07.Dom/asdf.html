@@ -6,6 +6,13 @@
     <title>디지털 시계(그래픽 버전)</title>
     <style>
         img { width: 50px; }
+        .inline-block {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .large-text {
+            font-size: 2rem;
+        }
     </style>
     <script>
         function twoDigit(num) {
@@ -26,14 +33,11 @@
                 document.getElementById('y1').src = `img/${dateStr[0]}.jpg`;
                 document.getElementById('y2').src = `img/${dateStr[1]}.jpg`;
                 document.getElementById('y3').src = `img/${dateStr[2]}.jpg`;
-                document.getElementById('y4').src = `img/${dateStr[3]}.jpg`;
-                
+                document.getElementById('y4').src = `img/${dateStr[3]}.jpg`;              
                 document.getElementById('mm1').src = `img/${dateStr[5]}.jpg`;
-                document.getElementById('mm2').src = `img/${dateStr[6]}.jpg`;
-                
+                document.getElementById('mm2').src = `img/${dateStr[6]}.jpg`;               
                 document.getElementById('d1').src = `img/${dateStr[8]}.jpg`;
-                document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;
-                
+                document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;              
                 document.getElementById('day').innerHTML = `${dateStr[10]}${dateStr[11]}${dateStr[12]}`; // 요일을 포함한 전체 날짜 문자열
 
 
@@ -49,33 +53,30 @@
     </script>
 </head>
 <body style="margin: 40px;">
-    <img id="y1">
-    <img id="y2">
-    <img id="y3">
-    <img id="y4">
-    <img src="img/minus.jpg">
-    <div><h1>년</h1></div>
-    <img id="mm1">
-    <img id="mm2">
-    <img src="img/minus.jpg">
-    <div><h1>월</h1></div>
-    <img id="d1">
-    <img id="d2">
-    <div><h1>일</h1></div>
+    <div class="inline-block"><img id="y1"></div>
+    <div class="inline-block"><img id="y2"></div>
+    <div class="inline-block"><img id="y3"></div>
+    <div class="inline-block"><img id="y4"></div>
+    <!-- <div class="inline-block"><img src="img/minus.jpg"></div> -->
+    <div class="inline-block large-text">년</div>
+    <div class="inline-block"><img id="mm1"></div>
+    <div class="inline-block"><img id="mm2"></div>
+    <!-- <div class="inline-block"><img src="img/minus.jpg"></div> -->
+    <div class="inline-block large-text">월</div>
+    <div class="inline-block"><img id="d1"></div>
+    <div class="inline-block"><img id="d2"></div>
+    <div class="inline-block large-text">일</div>
     
-    <div id="day" style="display: inline-block; font-size: 4rem;"></div> <!-- 요일 표시 -->
+    <div class="inline-block large-text" id="day" style="font-size: 4rem;"></div> <!-- 요일 표시 -->
 
     <hr><br>
-    <img id="h1">
-    <img id="h2">
-    <img src="img/Colon.jpg">
-    <img id="m1">
-    <img id="m2">
-    <img src="img/Colon.jpg">
-    <img id="s1">
-    <img id="s2">
-
-    <!-- //document.getElementById('yt').innerText = '년';
-    <h1 id ='yt'></h1>
- -->
+    <div class="inline-block"><img id="h1"></div>
+    <div class="inline-block"><img id="h2"></div>
+    <div class="inline-block"><img src="img/Colon.jpg"></div>
+    <div class="inline-block"><img id="m1"></div>
+    <div class="inline-block"><img id="m2"></div>
+    <div class="inline-block"><img src="img/Colon.jpg"></div>
+    <div class="inline-block"><img id="s1"></div>
+    <div class="inline-block"><img id="s2"></div>
 </body>
+</html>
