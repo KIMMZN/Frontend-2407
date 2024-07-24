@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계(그래픽 버전)</title>
+    <style>
+        img { width: 30px; }
+        .inline-block {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .large-text {
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);      // 4 --> '04', 15 --> '15'
+        }
+        function myDate(now) {
+            const week = '일월화수목금토';
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay() % 7]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        window.onload = () => {
+            setInterval(() => {
+                let now = new Date();
+                let dateStr = myDate(now);
+                document.getElementById('y1').src = `img/${dateStr[0]}.jpg`;
+                document.getElementById('y2').src = `img/${dateStr[1]}.jpg`;
+                document.getElementById('y3').src = `img/${dateStr[2]}.jpg`;
+                document.getElementById('y4').src = `img/${dateStr[3]}.jpg`;              
+                document.getElementById('mm1').src = `img/${dateStr[5]}.jpg`;
+                document.getElementById('mm2').src = `img/${dateStr[6]}.jpg`;               
+                document.getElementById('d1').src = `img/${dateStr[8]}.jpg`;
+                document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;              
+                document.getElementById('day').innerHTML = `${dateStr[10]}${dateStr[11]}${dateStr[12]}`; // 요일을 포함한 전체 날짜 문자열
+                let timeStr = myTime(now);
+                document.getElementById('h1').src = `img/${timeStr[0]}.jpg`;
+                document.getElementById('h2').src = `img/${timeStr[1]}.jpg`;
+                document.getElementById('m1').src = `img/${timeStr[3]}.jpg`;
+                document.getElementById('m2').src = `img/${timeStr[4]}.jpg`;
+                document.getElementById('s1').src = `img/${timeStr[6]}.jpg`;
+                document.querySelector('#s2').src = `img/${timeStr[7]}.jpg`;
+            }, 1000);
+        }
+    </script>
+</head>
+<body style="margin: 40px; background-image:url('img/SY.jpg')">
+    <div class="inline-block"><img id="y1"></div>
+    <div class="inline-block"><img id="y2"></div>
+    <div class="inline-block"><img id="y3"></div>
+    <div class="inline-block"><img id="y4"></div>
+    <div class="inline-block large-text">년</div>
+    <div class="inline-block"><img id="mm1"></div>
+    <div class="inline-block"><img id="mm2"></div>
+    <div class="inline-block large-text">월</div>
+    <div class="inline-block"><img id="d1"></div>
+    <div class="inline-block"><img id="d2"></div>
+    <div class="inline-block large-text">일</div>
+    <div class="inline-block large-text" id="day" style="font-size: 2rem;"></div> <!-- 요일 표시 -->
+    <hr><br>
+    <div class="inline-block"><img id="h1"></div>
+    <div class="inline-block"><img id="h2"></div>
+    <div class="inline-block"><img src="img/Colon.jpg"></div>
+    <div class="inline-block"><img id="m1"></div>
+    <div class="inline-block"><img id="m2"></div>
+    <div class="inline-block"><img src="img/Colon.jpg"></div>
+    <div class="inline-block"><img id="s1"></div>
+    <div class="inline-block"><img id="s2"></div>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디지털 시계(그래픽 버전)</title>
     <style>
-        img { width: 50px; }
+        img { width: 30px; }
         .inline-block {
             display: inline-block;
             vertical-align: middle;
@@ -29,7 +29,6 @@
             setInterval(() => {
                 let now = new Date();
                 let dateStr = myDate(now);
-
                 document.getElementById('y1').src = `img/${dateStr[0]}.jpg`;
                 document.getElementById('y2').src = `img/${dateStr[1]}.jpg`;
                 document.getElementById('y3').src = `img/${dateStr[2]}.jpg`;
@@ -39,8 +38,6 @@
                 document.getElementById('d1').src = `img/${dateStr[8]}.jpg`;
                 document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;              
                 document.getElementById('day').innerHTML = `${dateStr[10]}${dateStr[11]}${dateStr[12]}`; // 요일을 포함한 전체 날짜 문자열
-
-
                 let timeStr = myTime(now);
                 document.getElementById('h1').src = `img/${timeStr[0]}.jpg`;
                 document.getElementById('h2').src = `img/${timeStr[1]}.jpg`;
@@ -52,23 +49,19 @@
         }
     </script>
 </head>
-<body style="margin: 40px;">
+<body style="margin: 40px; background-image:url('img/SY.jpg')">
     <div class="inline-block"><img id="y1"></div>
     <div class="inline-block"><img id="y2"></div>
     <div class="inline-block"><img id="y3"></div>
     <div class="inline-block"><img id="y4"></div>
-    <!-- <div class="inline-block"><img src="img/minus.jpg"></div> -->
     <div class="inline-block large-text">년</div>
     <div class="inline-block"><img id="mm1"></div>
     <div class="inline-block"><img id="mm2"></div>
-    <!-- <div class="inline-block"><img src="img/minus.jpg"></div> -->
     <div class="inline-block large-text">월</div>
     <div class="inline-block"><img id="d1"></div>
     <div class="inline-block"><img id="d2"></div>
     <div class="inline-block large-text">일</div>
-    
-    <div class="inline-block large-text" id="day" style="font-size: 4rem;"></div> <!-- 요일 표시 -->
-
+    <div class="inline-block large-text" id="day" style="font-size: 2rem;"></div> <!-- 요일 표시 -->
     <hr><br>
     <div class="inline-block"><img id="h1"></div>
     <div class="inline-block"><img id="h2"></div>
