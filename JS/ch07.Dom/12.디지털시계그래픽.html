@@ -22,21 +22,15 @@
             setInterval(() => {
                 let now = new Date();
                 let dateStr = myDate(now);
-
                 document.getElementById('y1').src = `img/${dateStr[0]}.jpg`;
                 document.getElementById('y2').src = `img/${dateStr[1]}.jpg`;
                 document.getElementById('y3').src = `img/${dateStr[2]}.jpg`;
-                document.getElementById('y4').src = `img/${dateStr[3]}.jpg`;
-                
+                document.getElementById('y4').src = `img/${dateStr[3]}.jpg`;               
                 document.getElementById('mm1').src = `img/${dateStr[5]}.jpg`;
-                document.getElementById('mm2').src = `img/${dateStr[6]}.jpg`;
-                
+                document.getElementById('mm2').src = `img/${dateStr[6]}.jpg`;               
                 document.getElementById('d1').src = `img/${dateStr[8]}.jpg`;
-                document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;
-                
+                document.getElementById('d2').src = `img/${dateStr[9]}.jpg`;               
                 document.getElementById('day').innerHTML = `${dateStr[10]}${dateStr[11]}${dateStr[12]}`; // 요일을 포함한 전체 날짜 문자열
-
-
                 let timeStr = myTime(now);
                 document.getElementById('h1').src = `img/${timeStr[0]}.jpg`;
                 document.getElementById('h2').src = `img/${timeStr[1]}.jpg`;
