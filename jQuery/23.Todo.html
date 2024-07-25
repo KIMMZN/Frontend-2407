@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do 할 일 목록.</title>
+    <title>ToDo 할 일 목록</title>
     <style>
         input, button, div {padding: 5px;}
     </style>
@@ -18,52 +18,37 @@
             const addTodo = () => {
                 const todoText = input.val().trim();
                 if (todoText === '') {
-                    alert('올바르게 할 일을 입력하세요.;');
-                    return
+                    alert('올바르게 할 일을 입력하세요.');
+                    return;
                 }
-                const Key = keycount++;
+                const key = keyCount++;
 
-                const item = $('<div></div>').attr('data-key', key)
-                                /* 
-
-                                .appendChild('chekcbox', 'text', 'buttion')
-                                .appendTo('todo-list'); */
-
+                const item = $('<div></div>').attr('data-key', key);
                             
-                const checkbox = $('<input type="check box">');
-                const text = $('<span></span>').text('todoText');
+                const checkbox = $('<input type="checkbox">');
+                const text = $('<span></span>').text(todoText);
                 const button = $('<button>제거하기</button>');
 
                 item.append(checkbox, text, button);
                 todoList.append(item);
 
                 checkbox.on('change', function() {
-                    item.css('textDecoration', this.checked ? 'line-through' : '' );
+                    item.css('textDecoration', this.checked ? 'line-through' : '');
                 });
-                //
+
                 button.on('click', () => {
                     item.remove();
                 });
 
-                
+                input.val('');
+            };
 
-                
-            }
-
-                const removeTodo = key => {
-                const item = document.querySelector(`[data-key="${key}"]`);
-                todoList.removeChild(item);
-                };
-
-                // 이벤트 연결
-                 addButton.addEventListener('click', addTodo);
-                    input.addEventListener('keyup', e => {
-                    if (e.code === 'Enter') // (e.keyCode == 13)
-                
+            addButton.on('click', addTodo);
+            input.on('keyup', (e) => {
+                if (e.code === 'Enter') {
                     addTodo();
+                }
             });
-
-
         });
     </script>
 </head>
@@ -71,7 +56,6 @@
     <h1>할 일 목록</h1>
     <input id="todo" type="text">
     <button id="add-button">추가하기</button>
-    <div id="todo-list">
-       
-    </div>
+    <div id="todo-list"></div>
+</body>
 </html>
