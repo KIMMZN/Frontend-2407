@@ -26,9 +26,16 @@
             setInterval(() => {
                 let now = new Date;
                 let dateStr = myDate(now);
+                
                 document.getElementById('date').innerHTML = dateStr;
-
+                //$('#date').html(dateStr);
                 let timeStr = myTime(now);
+                //const elements = ['h1', 'h2', 'm1', 'm2', 's1', 's2'];
+                //const = indices [0, 1, 3, 4, 6, 7]
+
+                //$(`${elements[i]}`).attr('src', `img/$timeStr[i].svg`)
+
+
                 document.getElementById('h1').src = `img/${timeStr[0]}.svg`;
                 document.getElementById('h2').src = `img/${timeStr[1]}.svg`;
                 document.getElementById('m1').src = `img/${timeStr[3]}.svg`;
