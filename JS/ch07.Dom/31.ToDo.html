@@ -53,7 +53,7 @@
             };
 
             const removeTodo = key => {
-                const item = document.querySelector(`[data-key="${key}"]`);
+                const item = document.querySelector(`[data-key="${key}"]`); //<div id="div0"> // $(`#div${key}`)
                 todoList.removeChild(item);
             };
 
