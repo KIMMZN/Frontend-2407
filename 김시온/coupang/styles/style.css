@@ -1,27 +1,23 @@
 /* #0074e9  ㅈ팡 블루컬러, #e72223d */
-
-
-
-
-
 h1 {text-align: center; margin: 50px auto 30px;} /* 상 좌우 하 */
 h1 a {}
 h1 a img {width:200px;}
-main {width:500px; background-color: aqua; margin: 0 auto;}
+main {width: 500px; margin: 0 auto;}
 main #loginfrm {border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 20px;}
 main #loginfrm fieldset {}
 main #loginfrm fieldset ul {}
 main #loginfrm fieldset ul li {
   border: 1px solid #ccc; background: #fff;
-  display: flex; flex-flow: row nowrap;
+  display: flex; flex-flow: row nowrap;  
   margin-bottom: 10px;
+  position: relative;
 }
-main #loginfrm fieldset ul.error {
+main #loginfrm fieldset ul .error {
   color:#e7223d; padding: 10px; display: none;
 }
-main #loginfrm fieldset .id_error {}
-main #loginfrm fieldset .pw_error {}
-main #loginfrm fieldset ul li span {  }
+main #loginfrm fieldset .id_error {border: 0;}
+main #loginfrm fieldset .pw_error {border: 0;}
+main #loginfrm fieldset ul li span {}
 main #loginfrm fieldset ul li .id_bg {
   border-right: 1px solid #ccc;
   padding:20px; width:50px;
@@ -53,17 +49,15 @@ main #loginfrm fieldset ul li .psw_bg::after {
 }
 main #loginfrm fieldset ul li span input { width: 400px; height: 40px; border: 0; padding-left: 10px;
 }
-
 main #loginfrm fieldset ul li span input::placeholder {font-size:0.95rem ; color: #aaa;
 }
-
 main #loginfrm fieldset ul li span input[type=text] {}
 main #loginfrm fieldset ul li span input[type=password] {}
 main #loginfrm fieldset ul li .pw_show_hide {
-  background-color: yellow; width: 10px;
-  background-image: url(../images/img/coupang/icon.svg);
   background-position: -105px 0;
+  background-image: url(../images/img/coupang/icon.svg);
   width:21px; height: 21px;
+  position: absolute; right: 11px; top: 8px;
 }
 
 main #loginfrm fieldset .btm {
@@ -71,7 +65,7 @@ main #loginfrm fieldset .btm {
   padding: 15px 0; justify-content: space-between;
 }
 main #loginfrm fieldset .btm p {}
-main #loginfrm fieldset .btm p label {display: flex; align-items:center;}
+main #loginfrm fieldset .btm p label {}
 main #loginfrm fieldset .btm p label  input[name=login_y] {appearance: none}
 main #loginfrm fieldset .btm p label  input[name=login_y] + span::before {
   background-color: #fff;
@@ -88,10 +82,10 @@ main #loginfrm fieldset .btm p label  input[name=login_y]:checked + span::before
   background-position: -84px -21px;
 }
 main #loginfrm fieldset .btm p label  span {}
-main #loginfrm fieldset .btm .idpw_search {color: #00478f;}
+main #loginfrm fieldset .btm .idpw_search {color: #00478f; margin-top: 3px;}
 main #loginfrm fieldset .btm .idpw_search::after {
   content: ''; display: inline-block;
-  width: 7px;height: 15px;
+  width: 8px; height: 15px;
   background-image: url(../images/img/coupang/icon.svg);
   background-position: -104px -21px;
   margin-left: 5px;
