@@ -1,0 +1,30 @@
+경기도청 도로명주소: 행안부 도로명주소 api
+-
+위도, 경도 정보: 카카오 로컬 aip
+
+
+
+
+let url = https://business.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage
+=5&keyword=경기도청&confmKey=승인키&resultType=json
+
+
+
+
+https://www.google.com/search?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%B2%AD&oq=%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%B2%AD&gs_lcrp=EgZjaHJvbWUqDQgAEAAY4wIYsQMYgAQyDQgAEAAY4wIYsQMYgAQyEAgBEC4YrwEYxwEYsQMYgAQyDAgCEAAYQxiABBiKBTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIGCAcQBRhA0gEIMjExMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8
+
+
+
+fetch(url)
+.then(response = > response.json())
+
+// then(function(response) {
+	return response.json();
+}) //
+
+.then(result => {
+
+
+});
+
+
