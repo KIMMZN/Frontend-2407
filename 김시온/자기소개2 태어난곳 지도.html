@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도로명주소 + 카카오로컬 API + 지도</title>
-    <script src="key.js"></script>
+    <title>내가 태어난 곳</title>
+    <script src="myKey.js"></script>
+    <style>
+        #board {border: 1px solid black;
+                border-radius: 8px;
+                width: 800px;
+        }
+    </style>
     <script>
         window.onload = () => {
             const kakaoScript = document.createElement('script');
@@ -80,14 +86,17 @@
     </script>
 </head>
 <body style="margin: 40px;">
-    <h1>도로명주소 API + 카카오로컬 API + 지도</h1>
+    <div id="board">
+    <h1>내가 태어난곳</h1>
     <hr>
-    <h3>경기도청</h3>
+    <h3>진도군</h3>
     <ul>
         <li>도로명주소: <span id="place"></span></li>
         <li>위도: <span id="lat"></span></li>
         <li>경도: <span id="lon"></span></li>
     </ul>
+    <hr>
     <div id="map" style="width:600px; height:400px; margin-top: 20px;"></div>
+    </div>
 </body>
 </html>

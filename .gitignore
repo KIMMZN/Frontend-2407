@@ -1,6 +1,9 @@
 HTML/02.attr.html
 # key file 못올리게 방지
 key.js
+mykey.js
+
+#key.js
 
 # directory를 못올리게 하려면;
 dir/

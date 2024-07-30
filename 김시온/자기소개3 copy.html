@@ -13,6 +13,7 @@
       src="https://kit.fontawesome.com/ae15ba340d.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./add.js"></script>
 
     <style>
       * {
@@ -36,22 +37,14 @@
   <body>
     <div class="container-fluid">
       <nav
-        class="navbar navbar-expand-sm bg-light navbar-secondary"
+        class="navbar navbar-expand-sm bg-primary navbar-secondary"
         style="height: 120px"
       >
         <div class="container-fluid d-flex justify-content-center">
           <ul class="navbar-nav">
-            <a class="navbar-brand" href="#">
-              <img
-                src="./img/profile.png"
-                alt="Logo"
-                style="width: 40px"
-                class="rounded-pill"
-              />
-            </a>
-
+            
             <li class="nav-item ms-3">
-              <a class="nav-link active" href="./자기소개 home.html"
+              <a class="nav-link" href="./자기소개 home.html"
                 ><i class="fa-solid fa-house"></i>&nbsp;HOME</a
               >
             </li>
@@ -91,7 +84,7 @@
             </li>
 
             <li class="nav-item ms-3">
-              <a class="nav-link" href="./자기소개3 copy.html"
+              <a class="nav-link active" href="./자기소개3 copy.html"
                 ><i class="fa-solid fa-address-card"></i>&nbsp;MY PROFILE</a
               >
             </li>
@@ -109,10 +102,8 @@
               style="width: 100%"
             />
             <div class="mt-2" style="font-size: 0.9rem">
-              <span
-                >만나서 반갑습니다.<i class="fa-regular fa-face-smile"></i
-              ></span>
-              <a href="#"><span class="badge bg-secondary">수정</span></a>
+              <span id="statusMessage">오늘의 상태 메세지를 이 자리에 적습니다.</span>
+              <a href="#" id="editStatusBtn"><span class="badge bg-secondary">수정</span></a>
             </div>
 
             <div class="mt-5">
