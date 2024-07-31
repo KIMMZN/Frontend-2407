@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 날씨는?</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var weatherIcon = {
+                '01': 'fas fa-sun',
+                '02': 'fas fa-cloud-sun',
+                '03': 'fas fa-cloud',
+                '04': 'fas fa-cloud-meatball',
+                '09': 'fas fa-cloud-sun-rain',
+                '10': 'fas fa-cloud-showers-heavy',
+                '11': 'fas fa-poo-storm',
+                '13': 'far fa-snowflake',
+                '50': 'fas fa-smog'
+            };
+
+            // API 키를 입력하세요
+            var apiKey = "1eb1d18602c0e2dde562cdc2005a4495";
+            // 1eb1d18602c0e2dde562cdc2005a4495
+            
+
+            // 서울 날씨
+            var seoulApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=${apiKey}`;
+            $.ajax({
+                url: seoulApiUrl,
+                dataType: "json",
+                type: "GET",
+                success: function(resp) {
+                    var $Icon = (resp.weather[0].icon).substr(0, 2);
+                    var $weather_description = resp.weather[0].main;
+                    var $Temp = Math.floor(resp.main.temp - 273.15) + 'º';
+                    var $humidity = '습도 ' + resp.main.humidity + ' %';
+                    var $wind = '바람 ' + resp.wind.speed + ' m/s';
+                    var $city = '서울';
+                    var $cloud = '구름 ' + resp.clouds.all + "%";
+                    var $temp_min = '최저 온도 ' + Math.floor(resp.main.temp_min - 273.15) + 'º';
+                    var $temp_max = '최고 온도 ' + Math.floor(resp.main.temp_max - 273.15) + 'º';
+
+                    $('.weather_icon').append('<i class="' + weatherIcon[$Icon] + ' fa-5x" style="height : 150px; width : 150px;"></i>');
+                    $('.weather_description').prepend($weather_description);
+                    $('.current_temp').prepend($Temp);
+                    $('.humidity').prepend($humidity);
+                    $('.wind').prepend($wind);
+                    $('.city').append($city);
+                    $('.cloud').append($cloud);
+                    $('.temp_min').append($temp_min);
+                    $('.temp_max').append($temp_max);
+                }
+            });
+
+            // 경기도 날씨
+            var gyeonggiApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Gyeonggi-do&appid=${apiKey}`;
+            $.ajax({
+                url: gyeonggiApiUrl,
+                dataType: "json",
+                type: "GET",
+                success: function(resp) {
+                    var $g_Icon = (resp.weather[0].icon).substr(0, 2);
+                    var $g_weather_description = resp.weather[0].main;
+                    var $g_Temp = Math.floor(resp.main.temp - 273.15) + 'º';
+                    var $g_humidity = '습도 ' + resp.main.humidity + ' %';
+                    var $g_wind = '바람 ' + resp.wind.speed + ' m/s';
+                    var $g_city = '경기도';
+                    var $g_cloud = '구름 ' + resp.clouds.all + "%";
+                    var $g_temp_min = '최저 온도 ' + Math.floor(resp.main.temp_min - 273.15) + 'º';
+                    var $g_temp_max = '최고 온도 ' + Math.floor(resp.main.temp_max - 273.15) + 'º';
+
+                    $('.g_weather_icon').append('<i class="' + weatherIcon[$g_Icon] + ' fa-5x" style="height : 150px; width : 150px;"></i>');
+                    $('.g_weather_description').prepend($g_weather_description);
+                    $('.g_current_temp').prepend($g_Temp);
+                    $('.g_humidity').prepend($g_humidity);
+                    $('.g_wind').prepend($g_wind);
+                    $('.g_city').append($g_city);
+                    $('.g_cloud').append($g_cloud);
+                    $('.g_temp_min').append($g_temp_min);
+                    $('.g_temp_max').append($g_temp_max);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 서울 날씨 정보 -->
+    <div style="background-color: rgb(101, 178, 255); padding: 40px; color: #fff; height: 220px; margin-bottom: 20px;">
+        <div style="float: left;">
+            <div class="weather_icon"></div>
+        </div><br>
+        <div style="float: right; margin: -5px 0px 0px 60px; font-size: 11pt">
+            <div class="temp_min"></div>
+            <div class="temp_max"></div>
+            <div class="humidity"></div>
+            <div class="wind"></div>
+            <div class="cloud"></div>
+        </div>
+        <div style="float: right; margin-top: -45px;">
+            <div class="current_temp" style="font-size: 50pt"></div>
+            <div class="weather_description" style="font-size: 20pt"></div>
+            <div class="city" style="font-size: 13pt"></div>
+        </div>
+    </div>
+
+    <!-- 경기도 날씨 정보 -->
+    <div style="background-color: rgb(255, 178, 101); padding: 40px; color: #fff; height: 220px;">
+        <div style="float: left;">
+            <div class="g_weather_icon"></div>
+        </div><br>
+        <div style="float: right; margin: -5px 0px 0px 60px; font-size: 11pt">
+            <div class="g_temp_min"></div>
+            <div class="g_temp_max"></div>
+            <div class="g_humidity"></div>
+            <div class="g_wind"></div>
+            <div class="g_cloud"></div>
+        </div>
+        <div style="float: right; margin-top: -45px;">
+            <div class="g_current_temp" style="font-size: 50pt"></div>
+            <div class="g_weather_description" style="font-size: 20pt"></div>
+            <div class="g_city" style="font-size: 13pt"></div>
+        </div>
+    </div>
+</body>
+</html>
