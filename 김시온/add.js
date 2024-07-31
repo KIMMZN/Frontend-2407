@@ -1,4 +1,9 @@
 
+
+
+
+
+
       window.onload = () => {      
       function editStatusMessage() {
         let currentMessage = document.getElementById("statusMessage").innerText;
